@@ -57,7 +57,7 @@ def collect_toyzero_images(root : str) -> List[str]:
 
     return imgs_fake
 
-def parse_images(images : List[str]) -> List[Tuple[str, int, str, str]]:
+def parse_images(images : List[str]) -> List[Tuple[str, str, int, str]]:
     """Parse image names to infer Event, APA and Wire Plane"""
     result = []
 
@@ -78,10 +78,10 @@ def parse_images(images : List[str]) -> List[Tuple[str, int, str, str]]:
     return result
 
 def filter_parsed_images(
-    parsed_images : List[Tuple[str, int, str, str]],
+    parsed_images : List[Tuple[str, str, int, str]],
     apas          : Optional[Set[int]] = None,
     planes        : Optional[Set[str]] = None,
-) -> List[Tuple[str, int, str, str]]:
+) -> List[Tuple[str, str, int, str]]:
     """Filter parsed images list based on APAs and Wire Planes"""
 
     if apas is not None:
